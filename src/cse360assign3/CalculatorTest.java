@@ -97,7 +97,18 @@ public class CalculatorTest {
 
 	@Test
 	public void testGetHistory() {
-		fail("Not yet implemented");
+		Calculator temp = new Calculator();
+		temp.add(1);
+		temp.subtract(7);
+		temp.multiply(-1);
+		temp.divide(3);
+		assertEquals("0 + 1 - 7 * -1 / 3", temp.getHistory());
+		temp.add(8);
+		temp.multiply(10);
+		temp.divide(5);
+		temp.subtract(20);
+		assertEquals("0 + 1 - 7 * -1 / 3 + 8 * 10 / 5 - 20", temp.getHistory());
+		
 	}
 
 }
